@@ -131,9 +131,160 @@ nav ul{
 
 .project-details h2{
   margin: 0;
+  font-style: italic;
+}
+
+.project-divider{
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid currentColor;
+  opacity: 0.3;
+}
+
+.project-summary{
+  min-height: 3em;
+  margin: 0;
+}
+
+.contact-page{
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 140px 24px 40px;
+}
+
+.contact-page h1{
+  margin: 0 0 12px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.contact-intro{
+  margin: 0 0 32px;
+  opacity: 0.7;
+}
+
+.contact-list{
+  display: grid;
+  gap: 16px;
+}
+
+.contact-card{
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.contact-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card:focus-visible{
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+
+.contact-label{
+  font-weight: 700;
+}
+
+.contact-value{
+  overflow-wrap: anywhere;
+  opacity: 0.8;
+}
+
+.contact-arrow{
+  transition: transform 180ms ease;
+}
+
+.contact-card:hover .contact-arrow{
+  transform: translateX(4px);
+}
+
+.about-page{
+  display: grid;
+  gap: 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 140px 24px 40px;
+}
+
+.about-hero{
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+}
+
+.about-photo{
+  position: relative;
+  display: grid;
+  width: 180px;
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.about-photo img{
+  object-fit: cover;
+}
+
+.about-photo span{
+  opacity: 0.6;
+}
+
+.about-intro h1{
+  margin: 0 0 12px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.about-section h2{
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.about-text{
+  min-height: 3em;
+  margin: 0;
+  line-height: 1.6;
 }
 
 @media (max-width: 700px){
+  .about-hero{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-photo{
+    width: min(180px, 100%);
+  }
+
+  .contact-card{
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .contact-value{
+    grid-column: 1;
+    grid-row: 2;
+  }
+
   .project-card{
     grid-template-columns: 1fr;
     gap: 16px;
